@@ -5,4 +5,10 @@ const OPTIONS = Object.freeze({
   strict: true
 })
 
-export const validate = schema => Flow.tryCatch(value => schema.validateSync(value, OPTIONS))
+export const validate = schema => value => {
+  try {
+    return Flow.Ok(schema.validateSync(value, OPTIONS))
+  } catch (error) {
+    return Flow.Err(error, Flow.ERROR_CODE.invalidInput)
+  }
+}
