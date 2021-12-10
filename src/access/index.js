@@ -1,3 +1,7 @@
-import {createRecord} from 'access/create-record'
+import { getRecords } from 'access/get-records'
+import { createRecord } from 'access/create-record'
 
-export const access = { createRecord }
+export const access = {
+  createRecord,
+  getRecords
+}
