@@ -4,7 +4,7 @@ import { validate } from 'validations/core/validate'
 
 const schema = yup.object().shape({
   record: yup.string().required('required')
-})
+}).required()
 
 export const createRecord = () => Flow.ask()
   .map(context => context.input)

@@ -1,15 +1,16 @@
 import { data } from 'data'
+import { get } from 'lodash'
 import { access } from 'access'
 import { domain, Flow } from 'domain'
 import { validations } from 'validations'
 
-const makeContext = parameter => Object.freeze({
+const makeContext = request => Object.freeze({
   validateAccess: access.getRecords,
   validateInput: validations.getRecords,
   fetchRecords: data.getRecords,
-  parameter
+  parameter: get(request, 'body.parameter', {})
 })
 
-export const getRecords = parameter => Flow.of()
+export const getRecords = request => Flow.of()
   .chain(domain.getRecords)
-  .runWith(makeContext(parameter))
+  .runWith(makeContext(request))
