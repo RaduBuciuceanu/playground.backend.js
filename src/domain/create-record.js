@@ -12,8 +12,12 @@ const store = () => Reader.ask()
 const notify = () => Reader.ask()
   .map(() => console.log("Done."))
 
+const result = () => Reader.ask()
+  .map(context => context.input)
+
 export const createRecord = () => Reader.ask()
   .chain(validateAccess)
   .chain(validateInput)
   .chain(store)
   .chain(notify)
+  .chain(result)
