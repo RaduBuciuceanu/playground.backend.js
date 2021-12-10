@@ -1,9 +1,5 @@
-import Reader from 'crocks/Reader'
-
-const validateInput = () => Reader.ask()
-  .map(context => context.input)
-  .map(input => console.log(`Validating the input...`, input))
+import { createRecord } from 'validations/create-record'
 
 export const validations = {
-  validateInput
+  createRecord
 }

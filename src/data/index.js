@@ -1,7 +1,3 @@
-import Reader from 'crocks/Reader'
+import { createRecord } from 'data/create-record'
 
-const storeInput = () => Reader.ask()
-  .map(context => context.input)
-  .map(input => console.log(`Storing the input...`, input))
-
-export const data = { storeInput }
+export const data = { createRecord }
