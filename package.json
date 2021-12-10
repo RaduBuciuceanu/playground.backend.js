@@ -13,9 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "core-js": "3.19.3",
     "crocks": "0.12.4",
     "express": "4.17.1",
-    "lodash": "4.17.21"
+    "lodash": "4.17.21",
+    "yup": "0.32.11"
   },
   "devDependencies": {
     "@babel/cli": "7.16.0",
