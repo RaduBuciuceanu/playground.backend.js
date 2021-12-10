@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "engines": {
+    "node": "16.13.1"
+  },
   "scripts": {
     "t:start": "babel ./src --watch --out-dir dist --extensions .js",
     "s:start": "nodemon --config .nodemon  dist/index.js"
