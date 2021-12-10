@@ -1,19 +1,7 @@
-import { data } from 'data'
-import { access } from 'access'
-import { domain } from 'domain'
-import Reader from 'crocks/Reader'
-import { validations } from 'validations'
+import { controllers } from 'presentation/controllers'
 
-const makeContext = input => Object.freeze({
-  validateAccess: access.validateAccess,
-  validateInput: validations.validateInput,
-  storeInput: data.storeInput,
-  input
-})
-
-const start = input => Reader.of()
-  .chain(domain.execute)
-  .runWith(makeContext(input))
-
+const start = () => {
+  controllers.createRecord("Hello")
+}
 
 export const presentation = { start }
