@@ -10,14 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "crocks": "^0.12.4",
-    "express": "^4.17.1"
+    "crocks": "0.12.4",
+    "express": "4.17.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "babel-plugin-module-resolver": "^4.1.0",
-    "nodemon": "^2.0.15"
+    "@babel/cli": "7.16.0",
+    "@babel/core": "7.16.0",
+    "@babel/preset-env": "7.16.4",
+    "babel-plugin-module-resolver": "4.1.0",
+    "nodemon": "2.0.15"
   }
 }
