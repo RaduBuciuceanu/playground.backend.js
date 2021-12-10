@@ -1,5 +1,5 @@
-import Reader from 'crocks/Reader'
+import { Flow } from 'domain'
 
-export const getRecords = () => Reader.ask()
+export const getRecords = () => Flow.ask()
   .map(context => context.parameter)
   .map(parameter => console.log(`Validating the access...`, parameter))

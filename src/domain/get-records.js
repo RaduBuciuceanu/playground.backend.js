@@ -1,21 +1,21 @@
-import Reader from 'crocks/Reader'
+import { Flow } from 'domain'
 
-const validateAccess = () => Reader.ask()
+const validateAccess = () => Flow.ask()
   .chain(context => context.validateAccess())
 
-const validateInput = () => Reader.ask()
+const validateInput = () => Flow.ask()
   .chain(context => context.validateInput())
 
-const fetchRecords = () => Reader.ask()
+const fetchRecords = () => Flow.ask()
   .chain(context => context.fetchRecords())
 
-const notify = () => Reader.ask()
+const notify = () => Flow.ask()
   .map(() => console.log("Done."))
 
-const result = () => Reader.ask()
+const result = () => Flow.ask()
   .map(context => context.parameter)
 
-export const getRecords = () => Reader.ask()
+export const getRecords = () => Flow.ask()
   .chain(validateAccess)
   .chain(validateInput)
   .chain(fetchRecords)
