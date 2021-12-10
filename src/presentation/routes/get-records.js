@@ -4,7 +4,7 @@ import { handleFailure } from 'presentation/routes/handlers/handle-failure'
 import { handleSuccess } from 'presentation/routes/handlers/handle-success'
 
 export const getRecords = (request, response) => {
-  const parameter = get(request, 'body.parameter.ids', [])
+  const parameter = get(request, 'body.parameter', {})
   const created = controllers.getRecords(parameter)
 
   created.either(handleFailure(response), handleSuccess(response))
