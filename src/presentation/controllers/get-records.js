@@ -1,7 +1,6 @@
 import { data } from 'data'
-import { domain } from 'domain'
 import { access } from 'access'
-import Reader from 'crocks/Reader'
+import { domain, Flow } from 'domain'
 import { validations } from 'validations'
 
 const makeContext = parameter => Object.freeze({
@@ -11,6 +10,6 @@ const makeContext = parameter => Object.freeze({
   parameter
 })
 
-export const getRecords = parameter => Reader.of()
+export const getRecords = parameter => Flow.of()
   .chain(domain.getRecords)
   .runWith(makeContext(parameter))
